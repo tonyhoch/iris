@@ -114,6 +114,9 @@ else:
     final_pred_df = final_pred_df.rename(columns={"Sepal Length":"Sepal Length", "Sepal Width":"Sepal Width", "Petal Length":"Petal Length", "Petal Width":"Petal Width",  0:"Prediction"})
 st.write(final_pred_df)
 
+st.write("Prediction Probability")
+st.write(loaded_model.predict_proba(scaled_sample)
+
 
 # export predictions to excel
 def to_excel(df):
