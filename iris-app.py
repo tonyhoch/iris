@@ -28,8 +28,6 @@ Training dataset for the iris model:
 st.write(iris)
 
 # Draw correlation data
-st.write("## Correlations")
-st.write(iris.corr()['species'].drop('species'))
 
 # Draw figures
 st.write("## Training Data Graphs")
