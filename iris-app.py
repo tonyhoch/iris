@@ -117,7 +117,7 @@ st.write(final_pred_df)
 st.write("Prediction Probability")
 pred_prob = loaded_model.predict_proba(scaled_sample)
 pred_prob_df = pd.Dataframe(pred_prob)
-pred_prob_df = pred_prob_df.rename(columns={0:,"Setosa", 1:"Versicolo", 2:"Virginica"})
+pred_prob_df = pred_prob_df.rename(columns={0:"Setosa", 1:"Versicolor", 2:"Virginica"})
 
 st.write(pred_prob_df)
 
