@@ -72,10 +72,10 @@ if uploaded_file is not None:
 else:
     def user_input_features():
         # get inputs
-        sepal_length = st.sidebar.slider('Sepal Length:', min_value=0, max_value=10)
-        sepal_width = st.sidebar.slider('Sepal Width:', min_value=0, max_value=5)
-        petal_length = st.sidebar.slider('Petal Length:', min_value=0, max_value=10)
-        petal_width = st.sidebar.slider('Petal Width:', min_value=0, max_value=5)
+        sepal_length = st.sidebar.slider('Sepal Length:', min_value=0, max_value=10, step=0.1)
+        sepal_width = st.sidebar.slider('Sepal Width:', min_value=0, max_value=5, step=0.1)
+        petal_length = st.sidebar.slider('Petal Length:', min_value=0, max_value=10, step=0.1)
+        petal_width = st.sidebar.slider('Petal Width:', min_value=0, max_value=5, step=0.1)
         sample = [[sepal_length, sepal_width, petal_length, petal_width]]
 
         return sample
@@ -124,15 +124,15 @@ def to_excel(df):
     writer.save()
     processed_data = output.getvalue()
     return processed_data
-#df_xlsx = to_excel(final_pred_df)
+df_xlsx = to_excel(final_pred_df)
 
 # get current date
 today = date.today()
 # dd/mm/YY
 today = today.strftime("%Y_%m_%d")
 st.download_button(label='📥 Download Current Predictions',
-    data=iris ,
-    file_name= f'advertising_predictions_{today}.xlsx')
+    data= df_xlsx,
+    file_name= f'iris_species_predictions_{today}.xlsx')
 
 
 
