@@ -40,8 +40,11 @@ st.write(" - Move the sliders to adjust data shown in the training graphs below"
 
 # Filter dataset to fit sliders
 
+fig = sns.pairplot(iris, hue='species')
+st.pyplot(fig)
+
 # PLOTLY CHART
-fig = px.scatter(data=iris, x='petal_length', y="petal_width", color="species", title="Iris Petal Width vs. Petal Length")
+fig = px.scatter(iris, x='petal_length', y="petal_width", color="species", title="Iris Petal Width vs. Petal Length")
 st.plotly_chart(fig)
 
 #fig = px.scatter(df, x="TV", y="sales", color="newspaper", title="Sales vs. TV w/ Newspaper Spend", hover_data=["newspaper"])
