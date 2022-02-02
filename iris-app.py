@@ -75,10 +75,10 @@ if uploaded_file is not None:
 else:
     def user_input_features():
         # get inputs
-        sepal_length = st.sidebar.slider('Sepal Length:', min_value=0, max_value=10, step=0.1)
-        sepal_width = st.sidebar.slider('Sepal Width:', min_value=0, max_value=5, step=0.1)
-        petal_length = st.sidebar.slider('Petal Length:', min_value=0, max_value=10, step=0.1)
-        petal_width = st.sidebar.slider('Petal Width:', min_value=0, max_value=5, step=0.1)
+        sepal_length = st.sidebar.slider('Sepal Length:', min_value=0.0, max_value=10.0, step=0.1)
+        sepal_width = st.sidebar.slider('Sepal Width:', min_value=0.0, max_value=5.0, step=0.1)
+        petal_length = st.sidebar.slider('Petal Length:', min_value=0.0, max_value=10.0, step=0.1)
+        petal_width = st.sidebar.slider('Petal Width:', min_value=0.0, max_value=5.0, step=0.1)
         sample = [[sepal_length, sepal_width, petal_length, petal_width]]
 
         return sample
