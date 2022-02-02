@@ -21,7 +21,7 @@ st.write("""
 st.write("Explanation of dataset: https://en.wikipedia.org/wiki/Iris_flower_data_set")
 
 # write the images to the app
-img_setosa = Image.open('iris_setosa.jpg')
+img_setosa = Image.open('Iris_setosa.jpg')
 st.image(img_setosa, caption='Setosa Iris')
 
 # load train data to show users
