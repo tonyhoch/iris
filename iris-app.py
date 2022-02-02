@@ -57,7 +57,7 @@ st.write(" - All Training Data Points")
 # seaborn pairplot
 #fig = sns.pairplot(iris, hue='species')
 #st.pyplot(fig)
-iris_pairplot = Image.open('Iris_virginica.jpg')
+iris_pairplot = Image.open('iris_pairplot.jpg')
 st.image(iris_pairplot, caption='Iris Pairplot')
 
 
