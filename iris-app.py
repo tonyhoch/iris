@@ -35,11 +35,7 @@ st.write("## Training Data Graphs")
 # All training datadata
 st.write(" - All Training Data Points")
 
-
-st.write(" - Move the sliders to adjust data shown in the training graphs below")
-
-# Filter dataset to fit sliders
-
+# seaborn pairplot
 fig = sns.pairplot(iris, hue='species')
 st.pyplot(fig)
 
@@ -47,42 +43,35 @@ st.pyplot(fig)
 fig = px.scatter(iris, x='petal_length', y="petal_width", color="species", title="Iris Petal Width vs. Petal Length")
 st.plotly_chart(fig)
 
-#fig = px.scatter(df, x="TV", y="sales", color="newspaper", title="Sales vs. TV w/ Newspaper Spend", hover_data=["newspaper"])
-#st.plotly_chart(fig)
-
-#fig = px.scatter(df, x="radio", y="sales", color="newspaper", title="Sales vs. Radio w/ Newspaper Spend", hover_data=["newspaper"])
-#st.plotly_chart(fig)
-
-
 # create sidebar
 st.sidebar.header("Please input the campaign data below.")
 
 # upload file
 uploaded_file = st.sidebar.file_uploader("Upload prediction data", type=["csv"])
 if uploaded_file is not None:
-    campaign = pd.read_csv(uploaded_file)
-    #campaign.reset_index(drop=True, inplace=True)
+    sample = pd.read_csv(uploaded_file)
 else:
     def user_input_features():
         # get inputs
-        tv = st.sidebar.slider('TV Spend:', min_value=0, max_value=500)
-        radio = st.sidebar.slider('Radio Spend:', min_value=0, max_value=500)
-        newspaper = st.sidebar.slider('Newspaper Spend:', min_value=0, max_value=500)
-        campaign = [[tv, radio, newspaper]]
+        sepal_length = st.sidebar.slider('Sepal Length:', min_value=0, max_value=10)
+        sepal_width = st.sidebar.slider('Sepal Width:', min_value=0, max_value=5)
+        petal_length = st.sidebar.slider('Petal Length:', min_value=0, max_value=10)
+        petal_width = st.sidebar.slider('Petal Width:', min_value=0, max_value=5)
+        sample = [[sepal_length, sepal_width, petal_length, petal_width]]
 
-        return campaign
+        return sample
 
     # if no file is uploaded, get campagin from sidebar
-    campaign = user_input_features()
+    sample = user_input_features()
 
 
 # predict on the input data
-#loaded_poly = pickle.load(open('final_poly_converter.pkl', 'rb'))
-#loaded_model = pickle.load(open('sales_poly_model.pkl', 'rb'))
+loaded_model = pickle.load(open('iris_log_model.pkl', 'rb'))
+loaded_scaler = pickle.load(open('iris_scaler.pkl', 'rb'))
 
 # transform input data
-#campaign_poly = loaded_poly.transform(campaign)
-#pred = loaded_model.predict(campaign_poly)
+scaled_sample = loaded_scaler.transform(sample)
+pred = loaded_model.predict(scaled_sample)
 
 
 # write to screen with variable
