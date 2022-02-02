@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 import pickle
 import matplotlib.pyplot as plt
-from sklearn.preprocessing import StandardScalerfrom sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
 import matplotlib.pyplot as plt
 import seaborn as sns
 from io import BytesIO
