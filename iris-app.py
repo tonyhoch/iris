@@ -10,12 +10,19 @@ from io import BytesIO
 import xlsxwriter
 from datetime import date
 import plotly.express as px
+from PIL import Image
 
 # header written in markdown
 st.write("""
 # Iris Species Prediction App
 - Predicting the total sales based on an adverstising campaign
 """)
+
+st.write("Explanation of dataset: https://en.wikipedia.org/wiki/Iris_flower_data_set")
+
+# write the images to the app
+img_setosa = Image.open('iris_setosa.jpg')
+st.image(img_setosa, caption='Setosa Iris')
 
 # load train data to show users
 iris = pd.read_csv('iris.csv')
