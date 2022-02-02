@@ -24,6 +24,12 @@ st.write("Explanation of dataset: https://en.wikipedia.org/wiki/Iris_flower_data
 img_setosa = Image.open('Iris_setosa.jpg')
 st.image(img_setosa, caption='Setosa Iris')
 
+img_versicolor = Image.open('Iris_versicolor.jpg')
+st.image(img_versicolor, caption='Versicolor Iris')
+
+img_virginica = Image.open('Iris_virginica.jpg')
+st.image(img_virginica, caption='Setosa Virginica')
+
 # load train data to show users
 iris = pd.read_csv('iris.csv')
 
