@@ -26,15 +26,15 @@ col1, col2, col3 = st.columns(3)
 with col1:
     # write the images to the app
     img_setosa = Image.open('Iris_setosa.jpg')
-    st.image(img_setosa, caption='Setosa Iris')
+    st.image(img_setosa, caption='*Iris Setosa*')
 
 with col2:
     img_versicolor = Image.open('Iris_versicolor.jpg')
-    st.image(img_versicolor, caption='Versicolor Iris')
+    st.image(img_versicolor, caption='*Iris versicolor*')
 
 with col3:
     img_virginica = Image.open('Iris_virginica.jpg')
-    st.image(img_virginica, caption='Setosa Virginica')
+    st.image(img_virginica, caption='*Iris virginica*')
 
 # load train data to show users
 iris = pd.read_csv('iris.csv')
