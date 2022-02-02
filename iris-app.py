@@ -2,8 +2,7 @@ import streamlit as st
 import pandas as pd
 import pickle
 import matplotlib.pyplot as plt
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.linear_model import LinearRegression
+from sklearn.preprocessing import StandardScalerfrom sklearn.linear_model import LogisticRegression
 import matplotlib.pyplot as plt
 import seaborn as sns
 from io import BytesIO
@@ -100,18 +99,16 @@ st.write("""
 
 # concat campaign and predictions into final dataframe
 if uploaded_file is not None:
-    #pred = pd.DataFrame(pred)
-    #pred = pred.rename(columns={0:"Predictions"})
-    #final_pred_df = pd.concat([campaign, pred], axis=1)
-    pass
+    pred = pd.DataFrame(pred)
+    pred = pred.rename(columns={0:"Predictions"})
+    final_pred_df = pd.concat([sample, pred], axis=1)
 else:
-    #final_pred_df = pd.DataFrame(pred)
-    #campaign = pd.DataFrame(campaign)
-    #campaign = campaign.rename(columns={0:"TV", 1:"Radio", 2:"Newspaper"})
-    #final_pred_df = pd.concat([campaign,final_pred_df], axis=1)
-    #final_pred_df = final_pred_df.rename(columns={"TV":"TV", "Radio":"Radio", "Newspaper":"Newspaper", 0:"Prediction"})
-    pass
-#st.write(final_pred_df)
+    final_pred_df = pd.DataFrame(pred)
+    sample = pd.DataFrame(sample)
+    sample = sample.rename(columns={0:"Sepal Length", 1:"Sepal Width", 2:"Petal Length", 3:"Petal Width"})
+    final_pred_df = pd.concat([sample,final_pred_df], axis=1)
+    final_pred_df = final_pred_df.rename(columns={"Sepal Length":"Sepal Length", "Sepal Width":"Sepal Width", "Petal Length":"Petal Length", "Petal Width":"Petal Width",  0:"Prediction"})
+st.write(final_pred_df)
 
 
 # export predictions to excel
