@@ -16,9 +16,8 @@ from PIL import Image
 st.write("""
 # Iris Species Prediction App
 - Predicting the species of iris flowers based on sepal and petal data.
+- Explanation of dataset: https://en.wikipedia.org/wiki/Iris_flower_data_set
 """)
-
-st.write("Explanation of dataset: https://en.wikipedia.org/wiki/Iris_flower_data_set")
 
 # create columns
 col1, col2, col3 = st.columns(3)
