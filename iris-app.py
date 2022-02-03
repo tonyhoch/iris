@@ -15,7 +15,7 @@ from PIL import Image
 # header written in markdown
 st.write("""
 # Iris Species Prediction App
-- Predicting the total sales based on an adverstising campaign
+- Predicting the species of iris flowers based on sepal and petal data.
 """)
 
 st.write("Explanation of dataset: https://en.wikipedia.org/wiki/Iris_flower_data_set")
