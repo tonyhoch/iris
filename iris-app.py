@@ -21,7 +21,7 @@ st.write("""
 
 
 # get sepal vs petal image
-sepal_petal = Image.open('https://marcelofern.com/images/iris/sepal_vs_petal.png')
+sepal_petal = Image.open('sepal_vs_petal.png')
 st.image(sepal_petal, caption='Sepal vs. Petal')
 
 # create columns
