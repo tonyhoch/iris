@@ -71,7 +71,7 @@ fig = px.scatter(iris, x='petal_length', y="petal_width", color="species", title
 st.plotly_chart(fig)
 
 # create sidebar
-st.sidebar.header("Please input the campaign data below.")
+st.sidebar.header("Please input the iris data below.")
 
 # upload file
 uploaded_file = st.sidebar.file_uploader("Upload prediction data", type=["csv"])
