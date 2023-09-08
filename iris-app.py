@@ -93,8 +93,8 @@ else:
 
 
 # predict on the input data
-loaded_model = pickle.load(open('iris_log_model.pkl', 'rb'))
-loaded_scaler = pickle.load(open('iris_scaler.pkl', 'rb'))
+loaded_model = pickle.load(open('iris_log_model', 'rb'))
+loaded_scaler = pickle.load(open('iris_scaler', 'rb'))
 
 # transform input data
 scaled_sample = loaded_scaler.transform(sample)
